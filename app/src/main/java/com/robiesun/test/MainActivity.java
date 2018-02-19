@@ -16,14 +16,23 @@ public class MainActivity extends AppCompatActivity {
         RelativeLayout layout = new RelativeLayout(this);
         layout.setBackgroundColor(Color.YELLOW);
 
+        // adding the position of the button
+        RelativeLayout.LayoutParams buttonDetails= new RelativeLayout.LayoutParams(
+               RelativeLayout.LayoutParams.WRAP_CONTENT,
+                RelativeLayout.LayoutParams.WRAP_CONTENT
+
+        );
+
+        buttonDetails.addRule(RelativeLayout.CENTER_HORIZONTAL);
+        buttonDetails.addRule(RelativeLayout.CENTER_VERTICAL);
 
         // button
         Button redButton = new Button(this);
-        redButton.setText("Click me");
-        redButton.setBackgroundColor(Color.RED);
+        redButton.setText("Log in");
+        redButton.setBackgroundColor(Color.GREEN);
 
         // add widget to layout(button is new child of layout)
-        layout.addView(redButton);
+        layout.addView(redButton, buttonDetails);
         // set this activities content/display to this view
         setContentView(layout);
 
